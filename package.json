@@ -4,9 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "material-ui": "next",
     "mobx": "^3.1.16",
     "mobx-react": "^4.2.1",
     "prop-types": "^15.5.10",
+    "qs": "^6.5.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
