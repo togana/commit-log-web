@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
-import { Input, FormControl, InputLabel } from 'material-ui';
+import { Input, FormControl, InputLabel, List } from 'material-ui';
+
+import CommitItem from './CommitItem';
 
 @inject('commit')
 @observer
@@ -29,7 +31,9 @@ export default class CommitSearch extends Component {
             />
           </FormControl>
         </form>
-        {JSON.stringify(commit.list)}
+        <List>
+          {commit.list.map(row => <CommitItem key={row.sha} commit={row} />)}
+        </List>
       </div>
     );
   }
