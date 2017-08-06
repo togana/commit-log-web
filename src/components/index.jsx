@@ -5,7 +5,7 @@ import { Input, FormControl, InputLabel } from 'material-ui';
 
 @inject('commit')
 @observer
-export default class BookSearch extends Component {
+export default class CommitSearch extends Component {
   static propTypes = {
     commit: PropTypes.object.isRequired,
   };
