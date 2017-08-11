@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    build: .
+    environment:
+      NODE_ENV: production
+      API_BASE_URL: http://192.168.99.102:3000
+    ports:
+      - 80:80
+  app:
+    image: togana/commit-log-api
+    environment:
+      RAILS_ENV: production
+      DATABASE_URL: mysql2://root:pass@mysql:3306
+      SECRET_KEY_BASE: db93037b2ae622b593aacc7bb2886dcc456850497f9ac28df35f053a75353a438038956824b46cca76157ea2abf87b0d209f87f9698e62fdd6924f3d8da8bbbd
+    ports:
+      - 3000:3000
+  mysql:
+    image: togana/commit-log-db:v1.0
+    environment:
+      MYSQL_ROOT_PASSWORD: 'pass'
+    ports:
+      - 3306:3306
